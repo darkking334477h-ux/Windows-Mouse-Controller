@@ -1,4 +1,0 @@
-<resources>
-    <string name="app_name">Windows Mouse Controller</string>
-    <string name="accessibility_description">Allows the mouse controller to perform taps and scrolling when you activate them.</string>
-</resources>
