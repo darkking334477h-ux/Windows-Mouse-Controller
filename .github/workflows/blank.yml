@@ -14,16 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Find and Extract ZIP
+      - name: Extract Project ZIP
         run: |
-          ZIP=$(find . -maxdepth 1 -type f -iname 'InvisibleTouchpadController_GitHub.zip*' | head -n 1)
-          if [ -z "$ZIP" ]; then
-            echo "Project ZIP not found!"
-            ls -la
-            exit 1
-          fi
-          mkdir project
-          unzip -o "$ZIP" -d project
+          unzip -o InvisibleTouchpadController_Fixed_GitHub.zip -d project
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -44,5 +37,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Invisible-Touchpad-APK
+          name: InvisibleTouchpad-APK
           path: project/app/build/outputs/apk/debug/app-debug.apk
