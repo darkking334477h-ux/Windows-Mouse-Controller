@@ -1,5 +1,5 @@
 
-name: Build Android APK
+name: Build CursorFix APK
 
 on:
   workflow_dispatch:
@@ -11,12 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Extract Project ZIP
+      - name: Extract CursorFix ZIP
         run: |
-          unzip -o InvisibleTouchpadController_Fixed_GitHub.zip -d project
+          unzip -o InvisibleTouchpadController_CursorFix_GitHub.zip -d project
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -37,5 +37,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: InvisibleTouchpad-APK
+          name: CursorFix-APK
           path: project/app/build/outputs/apk/debug/app-debug.apk
